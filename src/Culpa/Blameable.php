@@ -4,19 +4,21 @@ namespace Culpa;
 
 use Illuminate\Support\Facades\Auth;
 
-trait BlameableTrait
+trait Blameable
 {
     /**
      * Evaluate the blameable fields to use
      *
-     * If nothing is set in $blameable, then ['created', 'updated'] is assumed,
-     * or ['created', 'updated', 'deleted'] if $softDelete is true.
-     *
-     * Otherwise, if keys exist for any of [created, updated, deleted], the
+     * If keys in $blameables exist for any of [created, updated, deleted], the
      * values are taken as the column names.
      *
      * If values exist for any of [created, updated, deleted], the default
      * column names are used ($defaultFields in the method below).
+     *
+     * Examples:
+     *   private $blameables = ['created', 'updated'];
+     *   private $blameables = ['created' => 'author_id'];
+     *   private $blameables = ['created', 'updated', 'deleted' => 'killedBy'];
      *
      * @return array
      */
@@ -53,21 +55,14 @@ trait BlameableTrait
                 } else if (in_array('deleted', $this->blameables)) {
                     $fields['deleted'] = $defaultFields['deleted'];
                 }
+
+                $this->blameables = $fields;
             } else {
                 // Just laugh and hope they told a joke
                 $this->blameables = array();
             }
         } else {
-            // By default, track both created and updated
-            $this->blameables = array(
-                'created' => $defaultFields['created'],
-                'updated' => $defaultFields['updated']
-            );
-
-            // If the model is soft-deletable, record who deleted it
-            if (isset($this->softDelete) && $this->softDelete) {
-                $this->blameables['deleted'] = $defaultFields['deleted'];
-            }
+            $this->blameables = array();
         }
 
         return $this->blameables;
@@ -214,6 +209,8 @@ trait BlameableTrait
         });
 
         static::deleting(function ($model) {
+            // In case this is a soft-deletable model
+            // @todo Does this issue an UPDATE before the DELETE if not?
             $model->updateDeleteBlameable();
         });
     }
