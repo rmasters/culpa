@@ -1,7 +1,9 @@
-# Blameable support for Laravel Eloquent models
+# Blameable hooks for Laravel Eloquent models
 
 This extension automatically adds references to the authenticated user when
 creating, updating or soft-deleting a model.
+
+[![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa)
 
 
 ## Installation
