@@ -19,11 +19,8 @@
         "illuminate/support": "4.0.x"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
-            "rmasters\\Culpa": "src/"
+            "Culpa": "src/"
         }
     },
     "minimum-stability": "dev"
