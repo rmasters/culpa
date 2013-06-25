@@ -1,0 +1,24 @@
+{
+    "name": "rmasters/culpa",
+    "description": "Adds Blameable support to Eloquent models in Laravel",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Ross Masters",
+            "email": "ross@rossmasters.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "rmasters\\Culpa": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
