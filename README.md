@@ -40,6 +40,12 @@ Or change the names of the columns used:
 
 Finally, you will need to add these fields to your migrations.
 
+The `createdBy`, `updatedBy` & `deletedBy` fields `belongsTo()` the model
+defined by `$blameableModel`, which is "User" by default. You can change the
+class by defining the `$blameableModel` property on your model, and potentially
+remove the relationships by overriding those methods (I'm not sure PHP's trait
+system works that way, to be looked into).
+
 
 ## License
 
