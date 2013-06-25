@@ -11,7 +11,7 @@ class FullyBlameableModel extends Model
 {
     use Blameable;
     protected $softDelete = true;
-    protected $blameables = array('created', 'updated', 'deleted');
+    protected $blameable = array('created', 'updated', 'deleted');
 }
 
 class FullyBlameableTest extends \PHPUnit_Framework_TestCase

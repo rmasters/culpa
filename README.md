@@ -24,7 +24,7 @@ You can add blameable fields on a per-model basis by adding the trait
     class Comment extends Eloquent {
         use Culpa\Blameable;
 
-        protected $blameables = ['created', 'updated', 'deleted'];
+        protected $blameable = ['created', 'updated', 'deleted'];
         
 *   On create, the authed user will be set in `created_by_id`,
 *   On update, the authed user will be set in `updated_by_id`,
@@ -33,7 +33,7 @@ You can add blameable fields on a per-model basis by adding the trait
 
 The names of the columns used can be changed by modifying the keys:
 
-    protected $blameables = ['created' => 'author_id', 'updated' => 'revised_by_id'];
+    protected $blameable = ['created' => 'author_id', 'updated' => 'revised_by_id'];
 
 Finally, you will need to add these fields to your migrations.
 

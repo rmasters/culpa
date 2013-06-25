@@ -12,7 +12,7 @@ class CustomBlameableModel extends Model
     use Blameable;
     protected $softDelete = true;
 
-    protected $blameables = array(
+    protected $blameable = array(
         'created' => 'authorId',
         'updated' => 'editorId'
     );

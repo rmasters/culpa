@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class NotBlameableModel extends Model
 {
     use Blameable;
-    protected $blameables = array();
+    protected $blameable = array();
 }
 
 class NotBlameableTest extends \PHPUnit_Framework_TestCase

@@ -6,24 +6,30 @@ use Illuminate\Support\Facades\Auth;
 
 trait Blameable
 {
+    private $fields;
+
     /**
      * Evaluate the blameable fields to use
      *
-     * If keys in $blameables exist for any of [created, updated, deleted], the
+     * If keys in $blameable exist for any of [created, updated, deleted], the
      * values are taken as the column names.
      *
      * If values exist for any of [created, updated, deleted], the default
      * column names are used ($defaultFields in the method below).
      *
      * Examples:
-     *   private $blameables = ['created', 'updated'];
-     *   private $blameables = ['created' => 'author_id'];
-     *   private $blameables = ['created', 'updated', 'deleted' => 'killedBy'];
+     *   private $blameable = ['created', 'updated'];
+     *   private $blameable = ['created' => 'author_id'];
+     *   private $blameable = ['created', 'updated', 'deleted' => 'killedBy'];
      *
      * @return array
      */
     private function getBlameableFields()
     {
+        if (isset($this->fields)) {
+            return $this->fields;
+        }
+
         $defaultFields = array(
             'created' => 'created_by_id',
             'updated' => 'updated_by_id',
@@ -31,41 +37,39 @@ trait Blameable
         );
 
         // Check if options were passed for blameable
-        if (isset($this->blameables)) {
-            if (is_array($this->blameables)) {
-                $fields = array();
+        if (isset($this->blameable)) {
+            if (is_array($this->blameable)) {
+                $this->fields = array();
 
                 // Created
-                if (array_key_exists('created', $this->blameables)) {
-                    $fields['created'] = $this->blameables['created'];
-                } else if (in_array('created', $this->blameables)) {
-                    $fields['created'] = $defaultFields['created'];
+                if (array_key_exists('created', $this->blameable)) {
+                    $this->fields['created'] = $this->blameable['created'];
+                } else if (in_array('created', $this->blameable)) {
+                    $this->fields['created'] = $defaultFields['created'];
                 }
 
                 // Updated
-                if (array_key_exists('updated', $this->blameables)) {
-                    $fields['updated'] = $this->blameables['updated'];
-                } else if (in_array('updated', $this->blameables)) {
-                    $fields['updated'] = $defaultFields['updated'];
+                if (array_key_exists('updated', $this->blameable)) {
+                    $this->fields['updated'] = $this->blameable['updated'];
+                } else if (in_array('updated', $this->blameable)) {
+                    $this->fields['updated'] = $defaultFields['updated'];
                 }
 
                 // Deleted
-                if (array_key_exists('deleted', $this->blameables)) {
-                    $fields['deleted'] = $this->blameables['deleted'];
-                } else if (in_array('deleted', $this->blameables)) {
-                    $fields['deleted'] = $defaultFields['deleted'];
+                if (array_key_exists('deleted', $this->blameable)) {
+                    $this->fields['deleted'] = $this->blameable['deleted'];
+                } else if (in_array('deleted', $this->blameable)) {
+                    $this->fields['deleted'] = $defaultFields['deleted'];
                 }
-
-                $this->blameables = $fields;
             } else {
                 // Just laugh and hope they told a joke
-                $this->blameables = array();
+                $this->fields = array();
             }
         } else {
-            $this->blameables = array();
+            $this->fields = array();
         }
 
-        return $this->blameables;
+        return $this->fields;
     }
 
     /**
