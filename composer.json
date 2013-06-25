@@ -2,12 +2,18 @@
     "name": "rmasters/culpa",
     "description": "Adds Blameable support to Eloquent models in Laravel",
     "version": "0.0.1",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ross Masters",
             "email": "ross@rossmasters.com"
         }
     ],
+    "homepage": "https://github.com/rmasters/culpa",
+    "support": {
+        "issues": "https://github.com/rmasters/culpa/issues",
+        "wiki": "https://github.com/rmasters/culpa/wiki"
+    },
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.0.x"
