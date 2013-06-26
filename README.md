@@ -1,9 +1,9 @@
-# Blameable hooks for Laravel Eloquent models
+# Culpa [![Latest Stable Version](https://poser.pugx.org/rmasters/culpa/v/stable.png)](https://packagist.org/packages/rmasters/culpa) [![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa)
 
-This extension automatically adds references to the authenticated user when
-creating, updating or soft-deleting a model.
 
-[![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa)
+Blameable extension for Laravel's Eloquent ORM models. This extension
+automatically adds references to the authenticated user when creating, updating
+or soft-deleting a model.
 
 
 ## Installation
