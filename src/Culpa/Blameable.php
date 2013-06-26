@@ -116,7 +116,7 @@ trait Blameable
         if ($user) {
             if (
                 $this->isBlameable('updated') && 
-                !$this->isDirty($this->getUpdatedByColumn())
+                !$this->isDirty($this->getColumn('updated'))
             ) {
                 $this->setUpdatedBy($user);
             }
@@ -124,7 +124,7 @@ trait Blameable
             if (
                 $this->isBlameable('created') &&
                 !$this->exists &&
-                !$this->isDirty($this->getCreatedByColumn())
+                !$this->isDirty($this->getColumn('created'))
             ) {
                 $this->setCreatedBy($user);
             }
@@ -141,7 +141,7 @@ trait Blameable
         if ($user) {
             if (
                 $this->isBlameable('deleted') &&
-                !$this->isDirty($this->getDeletedByColumn())
+                !$this->isDirty($this->getColumn('deleted'))
             ){ 
                 $this->setDeletedBy($user);
             }
@@ -157,17 +157,17 @@ trait Blameable
 
     public function setCreatedBy($user)
     {
-        $this->{$this->getCreatedByColumn()} = $user;
+        $this->{$this->getColumn('created')} = $user;
     }
 
     public function setUpdatedBy($user)
     {
-        $this->{$this->getUpdatedByColumn()} = $user;
+        $this->{$this->getColumn('updated')} = $user;
     }
 
     public function setDeletedBy($user)
     {
-        $this->{$this->getDeletedByColumn()} = $user;
+        $this->{$this->getColumn('deleted')} = $user;
     }
 
     private function getBlameableModel()
