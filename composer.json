@@ -19,7 +19,9 @@
         "illuminate/support": "4.0.x"
     },
     "require-dev": {
-        "illuminate/database": "4.0.x"
+        "illuminate/database": "4.0.x",
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": {
