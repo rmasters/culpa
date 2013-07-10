@@ -1,11 +1,23 @@
 <?php
+/**
+ * Blameable auditing support for Laravel's Eloquent ORM
+ *
+ * @author Ross Masters <ross@rossmasters.com>
+ * @copyright Ross Masters 2013
+ * @license MIT
+ * @version 0.0.1
+ */
 
 namespace Culpa;
 
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Add event-triggered references to the authorised user that triggered them
+ */
 trait Blameable
 {
+    /** @var array $fields Mapping of events to fields */
     private $fields;
 
     /**
@@ -155,21 +167,37 @@ trait Blameable
         return parent::touch();
     }
 
+    /**
+     * Set the created-by relationship
+     * @param int $user
+     */
     public function setCreatedBy($user)
     {
         $this->{$this->getColumn('created')} = $user;
     }
 
+    /**
+     * Set the deleted-by relationship
+     * @param int $user
+     */
     public function setUpdatedBy($user)
     {
         $this->{$this->getColumn('updated')} = $user;
     }
 
+    /**
+     * Set the deleted-by relationship
+     * @param int $user
+     */
     public function setDeletedBy($user)
     {
         $this->{$this->getColumn('deleted')} = $user;
     }
 
+    /**
+     * Get the model that is referred to by the blameable fields
+     * @return string User model class
+     */
     private function getBlameableModel()
     {
         $exists = property_exists(get_class($this), 'blameableModel') ||
@@ -178,6 +206,10 @@ trait Blameable
         return $exists ? $this->blameableModel : 'User';
     }
 
+    /**
+     * Get the user that created the model
+     * @return object User instance
+     */
     public function createdBy()
     {
         if ($this->isBlameable('created')) {
@@ -185,14 +217,21 @@ trait Blameable
         }
     }
 
+    /**
+     * Get the user that updated the model
+     * @return object User instance
+     */
     public function updatedBy()
     {
         if ($this->isBlameable('updated')) {
             return $this->belongsTo($this->getBlameableModel());
         }
-
     }
 
+    /**
+     * Get the user that deleted the model
+     * @return object User instance
+     */
     public function deletedBy()
     {
         if ($this->isBlameable('deleted')) {
@@ -200,6 +239,9 @@ trait Blameable
         }
     }
 
+    /**
+     * Overrides the model's booter to register the event hooks
+     */
     public static function boot()
     {
         parent::boot();
