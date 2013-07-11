@@ -53,6 +53,8 @@ class FullyBlameableTest extends \CulpaTest
         $this->assertEquals(1, $this->model->created_by_id);
         $this->assertEquals(1, $this->model->updated_by_id);
         $this->assertNull(null, $this->model->deleted_by_id);
+
+        $this->assertEquals(Auth::user()->id, $this->model->created_by->id);
     }
 
     public function testUpdate()
@@ -72,6 +74,8 @@ class FullyBlameableTest extends \CulpaTest
         $this->assertEquals(1, $this->model->created_by_id);
         $this->assertEquals(1, $this->model->updated_by_id);
         $this->assertEquals(null, $this->model->deleted_by_id);
+
+        $this->assertEquals(Auth::user()->id, $this->model->updated_by->id);
     }
 
     public function testDelete()
@@ -87,5 +91,7 @@ class FullyBlameableTest extends \CulpaTest
         $this->assertEquals(1, $this->model->created_by_id);
         $this->assertEquals(1, $this->model->updated_by_id);
         $this->assertEquals(1, $this->model->deleted_by_id);
+
+        $this->assertEquals(Auth::user()->id, $this->model->deleted_by->id);
     }
 }
