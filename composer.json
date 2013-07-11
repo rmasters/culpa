@@ -16,17 +16,23 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.0.x"
+        "illuminate/support": "4.0.x",
+        "illuminate/config": "4.0.x",
+        "illuminate/events": "4.0.x"
     },
     "require-dev": {
         "illuminate/database": "4.0.x",
         "phpunit/phpunit": "3.7.*",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "mockery/mockery": "0.8.*"
     },
     "autoload": {
         "psr-0": {
             "Culpa": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "preferred-install": "dist"
+    }
 }

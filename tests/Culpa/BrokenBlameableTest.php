@@ -5,22 +5,25 @@ namespace Culpa;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * A model that adds the trait but doesn't say which events to track
+ * A model with deletedBy as well
  */
-class NotBlameableModel extends Model
+class BrokenBlameableModel extends Model
 {
     use Blameable;
     protected $table = 'posts';
+    protected $softDelete = true;
+
+    protected $blameable = 42;
 }
 
-class NotBlameableTest extends \CulpaTest
+class BrokenBlameableTest extends \CulpaTest
 {
     private $model;
 
     public function setUp()
     {
         parent::setUp();
-        $this->model = new NotBlameableModel;
+        $this->model = new BrokenBlameableModel;
     }
 
     public function testBlameables()

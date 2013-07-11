@@ -111,11 +111,11 @@ trait Blameable
     /**
      * Get the active user
      *
-     * @return object User instance
+     * @return int User ID
      */
     protected function activeUser()
     {
-        return Auth::check() ? Auth::user() : null;
+        return Auth::check() ? Auth::user()->id : null;
     }
 
     /**

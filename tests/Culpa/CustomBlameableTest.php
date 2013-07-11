@@ -5,25 +5,28 @@ namespace Culpa;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * A model with deletedBy as well
+ * A model with custom names for fields
  */
 class CustomBlameableModel extends Model
 {
     use Blameable;
+    protected $table = 'posts';
     protected $softDelete = true;
 
     protected $blameable = array(
         'created' => 'authorId',
-        'updated' => 'editorId'
+        'updated' => 'editorId',
+        'deleted' => 'purgerId',
     );
 }
 
-class CustomBlameableTest extends \PHPUnit_Framework_TestCase
+class CustomBlameableTest extends \CulpaTest
 {
     private $model;
 
     public function setUp()
     {
+        parent::setUp();
         $this->model = new CustomBlameableModel;
     }
 
@@ -31,6 +34,13 @@ class CustomBlameableTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue($this->model->isBlameable('created'));
         $this->assertTrue($this->model->isBlameable('updated'));
-        $this->assertFalse($this->model->isBlameable('deleted'));
+        $this->assertTrue($this->model->isBlameable('deleted'));
+    }
+
+    public function testColumns()
+    {
+        $this->assertEquals('authorId', $this->model->getColumn('created'));
+        $this->assertEquals('editorId', $this->model->getColumn('updated'));
+        $this->assertEquals('purgerId', $this->model->getColumn('deleted'));
     }
 }

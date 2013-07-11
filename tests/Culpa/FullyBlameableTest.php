@@ -2,24 +2,30 @@
 
 namespace Culpa;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Container\Container;
 
 /**
- * A model with deletedBy as well
+ * A model with all 3 fields, with the default values
  */
 class FullyBlameableModel extends Model
 {
     use Blameable;
+    protected $table = 'posts';
     protected $softDelete = true;
     protected $blameable = array('created', 'updated', 'deleted');
 }
 
-class FullyBlameableTest extends \PHPUnit_Framework_TestCase
+class FullyBlameableTest extends \CulpaTest
 {
     private $model;
 
     public function setUp()
     {
+        parent::setUp();
         $this->model = new FullyBlameableModel;
     }
 
@@ -28,5 +34,58 @@ class FullyBlameableTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->model->isBlameable('created'), "Created should be blameable");
         $this->assertTrue($this->model->isBlameable('updated'), "Updated should be blameable");
         $this->assertTrue($this->model->isBlameable('deleted'), "Deleted should be blameable");
+    }
+
+    public function testCreate()
+    {
+        $this->model->id = 1;
+        $this->model->title = "Hello, world!";
+        $this->assertTrue($this->model->save());
+
+        $this->model = FullyBlameableModel::find($this->model->id);
+
+        // Check datetimes are being set properly for sanity's sake
+        $this->assertNotNull($this->model->created_at);
+        $this->assertEquals($this->model->created_at, $this->model->updated_at);
+        $this->assertNull($this->model->deleted_at);
+
+        // Check id references are set
+        $this->assertEquals(1, $this->model->created_by_id);
+        $this->assertEquals(1, $this->model->updated_by_id);
+        $this->assertNull(null, $this->model->deleted_by_id);
+    }
+
+    public function testUpdate()
+    {
+        // Make sure updated_at > created_at by at least 1 second
+        usleep(1.5 * 1000000); // 1.5 seconds
+
+        $this->model = FullyBlameableModel::find(1);
+        $this->model->title = "Test Post, please ignore";
+        $this->assertTrue($this->model->save());
+
+        // Check datetimes are being set properly for sanity's sake
+        $this->assertNotNull($this->model->created_at);
+        $this->assertGreaterThan($this->model->created_at, $this->model->updated_at);
+        $this->assertNull($this->model->deleted_at);
+
+        $this->assertEquals(1, $this->model->created_by_id);
+        $this->assertEquals(1, $this->model->updated_by_id);
+        $this->assertEquals(null, $this->model->deleted_by_id);
+    }
+
+    public function testDelete()
+    {
+        $this->model = FullyBlameableModel::find(1);
+        $this->assertTrue($this->model->delete());
+
+        // Check datetimes are being set properly for sanity's sake
+        $this->assertNotNull($this->model->created_at);
+        $this->assertGreaterThan($this->model->created_at, $this->model->updated_at);
+        $this->assertNotNull($this->model->deleted_at);
+
+        $this->assertEquals(1, $this->model->created_by_id);
+        $this->assertEquals(1, $this->model->updated_by_id);
+        $this->assertEquals(1, $this->model->deleted_by_id);
     }
 }
