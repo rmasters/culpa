@@ -17,12 +17,12 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.0.x",
-        "illuminate/config": "4.0.x",
-        "illuminate/events": "4.0.x"
+        "illuminate/support": "4.0.5",
+        "illuminate/config": "4.0.5",
+        "illuminate/events": "4.0.5"
     },
     "require-dev": {
-        "illuminate/database": "4.0.x",
+        "illuminate/database": "4.0.5",
         "phpunit/phpunit": "3.7.*",
         "satooshi/php-coveralls": "dev-master",
         "mockery/mockery": "0.8.*"

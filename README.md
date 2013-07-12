@@ -1,4 +1,4 @@
-# Culpa [![Latest Stable Version](https://poser.pugx.org/rmasters/culpa/v/stable.png)](https://packagist.org/packages/rmasters/culpa) [![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa) [![Coverage Status](https://coveralls.io/repos/rmasters/culpa/badge.png)](https://coveralls.io/r/rmasters/culpa)
+# Culpa [![Latest Stable Version](https://poser.pugx.org/rmasters/culpa/v/stable.png)](https://packagist.org/packages/rmasters/culpa) [![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa) [![Coverage Status](https://coveralls.io/repos/rmasters/culpa/badge.png)](https://coveralls.io/r/rmasters/culpa) [![Dependency Status](https://www.versioneye.com/user/projects/51e0102690410600020001bb/badge.png)](https://www.versioneye.com/user/projects/51e0102690410600020001bb)
 
 
 Blameable extension for Laravel's Eloquent ORM models. This extension

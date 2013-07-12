@@ -3,11 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2583d730843a2706377f961239276bd7",
+    "hash": "e9121c85f988a66eb228af6ae744588c",
     "packages": [
         {
             "name": "illuminate/config",
-            "version": "4.0.x-dev",
+            "version": "v4.0.5",
             "target-dir": "Illuminate/Config",
             "source": {
                 "type": "git",
@@ -97,7 +97,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "4.0.x-dev",
+            "version": "v4.0.5",
             "target-dir": "Illuminate/Events",
             "source": {
                 "type": "git",
@@ -190,17 +190,17 @@
         },
         {
             "name": "illuminate/support",
-            "version": "4.0.x-dev",
+            "version": "v4.0.5",
             "target-dir": "Illuminate/Support",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "6a690ae6dff5da787f3b265350f23c4e8e4828ed"
+                "reference": "v4.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/6a690ae6dff5da787f3b265350f23c4e8e4828ed",
-                "reference": "6a690ae6dff5da787f3b265350f23c4e8e4828ed",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/v4.0.5",
+                "reference": "v4.0.5",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +235,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2013-07-09 02:19:57"
+            "time": "2013-06-11 00:56:49"
         },
         {
             "name": "symfony/finder",
@@ -292,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "633e70669815865988b68fd40244d90d7d024788"
+                "reference": "1f33485b6e5f11fb1fc72a2090f961fe9508a300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/633e70669815865988b68fd40244d90d7d024788",
-                "reference": "633e70669815865988b68fd40244d90d7d024788",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/1f33485b6e5f11fb1fc72a2090f961fe9508a300",
+                "reference": "1f33485b6e5f11fb1fc72a2090f961fe9508a300",
                 "shasum": ""
             },
             "require": {
@@ -376,21 +376,21 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-07-10 19:37:17"
+            "time": "2013-07-11 23:30:45"
         },
         {
             "name": "illuminate/database",
-            "version": "4.0.x-dev",
+            "version": "v4.0.5",
             "target-dir": "Illuminate/Database",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "344b3344c4d07343f9bd9faad8067007b0146b66"
+                "reference": "v4.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/344b3344c4d07343f9bd9faad8067007b0146b66",
-                "reference": "344b3344c4d07343f9bd9faad8067007b0146b66",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/v4.0.5",
+                "reference": "v4.0.5",
                 "shasum": ""
             },
             "require": {
@@ -436,7 +436,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2013-07-09 02:32:44"
+            "time": "2013-06-13 03:10:30"
         },
         {
             "name": "mockery/mockery",
@@ -1020,12 +1020,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "51fadec8a95b6b58a8512d5418c96de28dd78d1a"
+                "reference": "8ecf5c2d51ac0c26e16d98ec87a4636d89f62558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/51fadec8a95b6b58a8512d5418c96de28dd78d1a",
-                "reference": "51fadec8a95b6b58a8512d5418c96de28dd78d1a",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/8ecf5c2d51ac0c26e16d98ec87a4636d89f62558",
+                "reference": "8ecf5c2d51ac0c26e16d98ec87a4636d89f62558",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1059,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-19 09:29:07"
+            "time": "2013-07-11 19:37:15"
         },
         {
             "name": "symfony/console",
@@ -1068,12 +1068,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "3b58c937fc7e0dbdadd2642f21c462a0e663f0b6"
+                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/3b58c937fc7e0dbdadd2642f21c462a0e663f0b6",
-                "reference": "3b58c937fc7e0dbdadd2642f21c462a0e663f0b6",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/c374f12670a4e6b6b72ef2a2d58b75534d94609c",
+                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1112,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-08 13:37:01"
+            "time": "2013-07-11 19:37:15"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1269,12 +1269,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "82100c7732c95452702d11433aad50988700d36c"
+                "reference": "7a6c10b37cb4335dcca038da760f29915a374b81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/82100c7732c95452702d11433aad50988700d36c",
-                "reference": "82100c7732c95452702d11433aad50988700d36c",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/7a6c10b37cb4335dcca038da760f29915a374b81",
+                "reference": "7a6c10b37cb4335dcca038da760f29915a374b81",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1307,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-16 07:54:39"
+            "time": "2013-07-11 19:37:15"
         }
     ],
     "aliases": [
