@@ -83,6 +83,9 @@ class FullyBlameableTest extends \CulpaTest
         $this->model = FullyBlameableModel::find(1);
         $this->assertTrue($this->model->delete());
 
+        // Reload the model
+        $this->model = FullyBlameableModel::withTrashed()->find(1);
+
         // Check datetimes are being set properly for sanity's sake
         $this->assertNotNull($this->model->created_at);
         $this->assertGreaterThan($this->model->created_at, $this->model->updated_at);

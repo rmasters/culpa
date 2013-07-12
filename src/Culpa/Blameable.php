@@ -162,6 +162,7 @@ trait Blameable
                 !$this->isDirty($this->getColumn('deleted'))
             ){ 
                 $this->setDeletedBy($user);
+                $this->save();
             }
         }
     }
