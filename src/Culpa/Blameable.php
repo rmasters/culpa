@@ -11,6 +11,7 @@
 namespace Culpa;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Add event-triggered references to the authorised user that triggered them
@@ -115,7 +116,12 @@ trait Blameable
      */
     protected function activeUser()
     {
-        return Auth::check() ? Auth::user()->id : null;
+        $fn = Config::get('culpa::users.active_user');
+        if (!is_callable($fn)) {
+            throw new \Exception("culpa::users.active_user should be a closure");
+        }
+
+        return $fn();
     }
 
     /**
@@ -200,10 +206,7 @@ trait Blameable
      */
     private function getBlameableModel()
     {
-        $exists = property_exists(get_class($this), 'blameableModel') ||
-            isset($this->blameableModel);
-
-        return $exists ? $this->blameableModel : 'User';
+        return Config::get('culpa::users.classname', 'User');
     }
 
     /**
