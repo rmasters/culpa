@@ -213,7 +213,7 @@ trait Blameable
      * Get the user that created the model
      * @return object User instance
      */
-    public function createdBy()
+    public function created_by()
     {
         if ($this->isBlameable('created')) {
             return $this->belongsTo($this->getBlameableModel());
@@ -224,7 +224,7 @@ trait Blameable
      * Get the user that updated the model
      * @return object User instance
      */
-    public function updatedBy()
+    public function updated_by()
     {
         if ($this->isBlameable('updated')) {
             return $this->belongsTo($this->getBlameableModel());
@@ -235,7 +235,7 @@ trait Blameable
      * Get the user that deleted the model
      * @return object User instance
      */
-    public function deletedBy()
+    public function deleted_by()
     {
         if ($this->isBlameable('deleted')) {
             return $this->belongsTo($this->getBlameableModel());
