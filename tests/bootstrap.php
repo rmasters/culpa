@@ -15,29 +15,36 @@ use Illuminate\Support\Facades\DB;
 
 class TestConfig implements Illuminate\Config\LoaderInterface
 {
-    public function config() {
-        $config = [
-            'database' => [
-                'default' => 'sqlite',
-                'connections' => [
-                    'sqlite' => [
-                        'database' => ':memory:',
-                        'driver' => 'sqlite',
-                        'prefix' => '',
+    private $config;
+
+    public function config($namespace = null) {
+        if (!isset($this->config)) {
+            $this->config = [
+                'default' => [
+                    'database' => [
+                        'default' => 'sqlite',
+                        'connections' => [
+                            'sqlite' => [
+                                'database' => ':memory:',
+                                'driver' => 'sqlite',
+                                'prefix' => '',
+                            ],
+                        ],
                     ],
                 ],
-            ],
-        ];
+                'culpa' => require __DIR__ . '/../src/config/config.php',
+            ];
+        }
 
-        return $config;
+        return $this->config[$namespace ?: 'default'];
     }
 
     public function load($environment, $group, $namespace = null)
     {
-        if (!array_key_exists($group, $this->config())) {
+        if (!array_key_exists($group, $this->config($namespace))) {
             return [];
         }
-        return $this->config()[$group];
+        return $this->config($namespace)[$group];
     }
 
     public function exists($group, $namespace = null)

@@ -31,7 +31,7 @@ class CulpaServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
+        $this->app['config']->package('rmasters/culpa', __DIR__ . '/../config');
     }
 
     /**
@@ -41,7 +41,7 @@ class CulpaServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return array();
+        return array('culpa');
     }
 
 }
