@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Config;
 
 /**
  * Add event-triggered references to the authorised user that triggered them
+ *
+ * @property \Illuminate\Database\Eloquent\Model $updated_by The updater of this model
+ * @property int $updated_by_id User id of the model updater
  */
 trait UpdatedBy
 {
     /**
      * Get the user that updated the model
-     * @return \Illuminate\Database\Eloquent\Model|null User instance
+     * @return \Illuminate\Database\Eloquent\Model User instance
      */
     public function updatedBy()
     {
