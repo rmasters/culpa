@@ -19,21 +19,21 @@ class TestConfig implements Illuminate\Config\LoaderInterface
 
     public function config($namespace = null) {
         if (!isset($this->config)) {
-            $this->config = [
-                'default' => [
-                    'database' => [
+            $this->config = array(
+                'default' => array(
+                    'database' => array(
                         'default' => 'sqlite',
-                        'connections' => [
-                            'sqlite' => [
+                        'connections' => array(
+                            'sqlite' => array(
                                 'database' => ':memory:',
                                 'driver' => 'sqlite',
                                 'prefix' => '',
-                            ],
-                        ],
-                    ],
-                ],
+                            ),
+                        ),
+                    ),
+                ),
                 'culpa' => require __DIR__ . '/../src/config/config.php',
-            ];
+            );
         }
 
         return $this->config[$namespace ?: 'default'];
@@ -42,9 +42,11 @@ class TestConfig implements Illuminate\Config\LoaderInterface
     public function load($environment, $group, $namespace = null)
     {
         if (!array_key_exists($group, $this->config($namespace))) {
-            return [];
+            return array();
         }
-        return $this->config($namespace)[$group];
+
+        $config = $this->config($namespace);
+        return $config[$group];
     }
 
     public function exists($group, $namespace = null)
@@ -59,7 +61,7 @@ class TestConfig implements Illuminate\Config\LoaderInterface
 
     public function getNamespaces()
     {
-        return [];
+        return array();
     }
 
     public function cascadePackage($environment, $package, $group, $items)
@@ -132,10 +134,10 @@ class AppFactory {
 
     private function getAuth()
     {
-        $user = new User([
+        $user = new User(array(
             'id' => 1,
             'name' => 'Test User'
-        ]);
+        ));
 
         $auth = Mockery::mock('Illuminate\Auth\Guard');
 
@@ -146,12 +148,20 @@ class AppFactory {
     }
 }
 
+/**
+ * Dummy user model
+ */
+class User extends Model
+{
+    protected $fillable = array('id', 'name');
+}
+
 class CulpaTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @var \Illuminate\Support\Container Inversion-of-Control container
      */
-    protected static $app;
+    public static $app;
 
     public static function setUpBeforeClass()
     {
@@ -166,7 +176,7 @@ class CulpaTest extends PHPUnit_Framework_TestCase
             });
         }
 
-        DB::insert('insert into users (name) values (?)', ['Test User']);
+        DB::insert('insert into users (name) values (?)', array('Test User'));
 
         if (!Schema::hasTable('posts')) {
             Schema::create('posts', function($table) {
@@ -196,10 +206,4 @@ class CulpaTest extends PHPUnit_Framework_TestCase
     }
 }
 
-/**
- * Dummy user model
- */
-class User extends Model
-{
-    protected $fillable = ['id', 'name'];
-}
+CulpaTest::$app = AppFactory::create();

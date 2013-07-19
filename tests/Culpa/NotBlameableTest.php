@@ -2,23 +2,18 @@
 
 namespace Culpa;
 
-use Illuminate\Database\Eloquent\Model;
-
-/**
- * A model that adds the trait but doesn't say which events to track
- */
-class NotBlameableModel extends Model
-{
-    use Blameable;
-    protected $table = 'posts';
-}
-
 class NotBlameableTest extends \CulpaTest
 {
     private $model;
 
     public function setUp()
     {
+        if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
+            return $this->markTestSkipped('This test uses a model that uses traits.');
+        }
+
+        require_once __DIR__ . '/Models/NotBlameableModel.php';
+
         parent::setUp();
         $this->model = new NotBlameableModel;
     }
