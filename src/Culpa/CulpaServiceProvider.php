@@ -1,4 +1,11 @@
 <?php
+/**
+ * Blameable auditing support for Laravel's Eloquent ORM
+ *
+ * @author Ross Masters <ross@rossmasters.com>
+ * @copyright Ross Masters 2013
+ * @license MIT
+ */
 
 namespace Culpa;
 

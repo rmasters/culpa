@@ -5,7 +5,6 @@
  * @author Ross Masters <ross@rossmasters.com>
  * @copyright Ross Masters 2013
  * @license MIT
- * @version 0.0.1
  */
 
 namespace Culpa;
