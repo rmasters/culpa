@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class FullyBlameableModel extends Model
 {
-    use Blameable;
+    use CreatedBy, UpdatedBy, DeletedBy, Blameable;
     protected $table = 'posts';
     protected $softDelete = true;
     protected $blameable = array('created', 'updated', 'deleted');

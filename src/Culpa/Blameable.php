@@ -22,48 +22,6 @@ trait Blameable
     private $fields;
 
     /**
-     * Get the model that is referred to by the blameable fields
-     * @return string User model class
-     */
-    private function getBlameableModel()
-    {
-        return Config::get('culpa::users.classname', 'User');
-    }
-
-    /**
-     * Get the user that created the model
-     * @return \Illuminate\Database\Eloquent\Model|null User instance
-     */
-    public function createdBy()
-    {
-        if ($this->isBlameable('created')) {
-            return $this->belongsTo($this->getBlameableModel());
-        }
-    }
-
-    /**
-     * Get the user that updated the model
-     * @return \Illuminate\Database\Eloquent\Model|null User instance
-     */
-    public function updatedBy()
-    {
-        if ($this->isBlameable('updated')) {
-            return $this->belongsTo($this->getBlameableModel());
-        }
-    }
-
-    /**
-     * Get the user that deleted the model
-     * @return \Illuminate\Database\Eloquent\Model|null User instance
-     */
-    public function deletedBy()
-    {
-        if ($this->isBlameable('deleted')) {
-            return $this->belongsTo($this->getBlameableModel());
-        }
-    }
-
-    /**
      * Does the model use blameable fields for an event?
      *
      * @param string $event One of (created|updated|deleted), or omitted for any
