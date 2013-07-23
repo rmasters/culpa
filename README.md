@@ -8,40 +8,69 @@ or soft-deleting a model.
 
 ## Installation
 
-This implementation requires PHP 5.4 as it uses traits to extend the model.
+This package works with PHP 5.3 and above, but includes traits to make it easier
+to use on PHP 5.4+.
+
+To install the package in your project:
 
 1.  Add to the require section of your `composer.json`:
-    `"rmasters/culpa": "dev-master"` and `composer update`,
-2.  Add to the `providers` list in config/app.php:
+    `"rmasters/culpa": "dev-master"`,
+2.  Run `composer update`,
+3.  Add to the `providers` list in config/app.php:
     `"Culpa\CulpaServiceProvider"`,
-3.  Publish the configuration to your application:
-    `php artisan config:publish rmasters/culpa`
+4.  Publish the configuration to your application:
+    `artisan config:publish rmasters/culpa`
 
 
 ## Usage
 
-You can add blameable fields on a per-model basis by adding the trait
-`Culpa\Blameable` to your model classes, and setting an array of events to record.
+You can add auditable fields on a per-model basis by adding a protected property
+and a model observer. The property `$blameable` contains events you wish to
+record - at present this is restricted to created, updated and deleted - which
+function the same as Laravel's timestamps.
 
     class Comment extends Eloquent {
-        use Culpa\Blameable;
 
-        protected $blameable = ['created', 'updated', 'deleted'];
+        protected $blameable = array('created', 'updated', 'deleted');
 
-*   On create, the authed user will be set in `created_by_id`,
-*   On update, the authed user will be set in `updated_by_id`,
-   Additionally, if the model is soft-deletable, the authed user will be set in
-    `deleted_by_id`.
+*   On create, the authenticated user will be set in `created_by_id`,
+*   On create and update, the authenticated user will be set in `updated_by_id`,
+*   Additionally, if the model is soft-deletable, the authenticated user will be
+    set in `deleted_by_id`.
+
+To activate the automatic updating of these fields, you need to add the model
+observer to this model:
+
+    class Comment extends Eloquent {
+
+        // ...
+
+    }
+    Comment::observe(new Culpa\BlameableObserver);
 
 The names of the columns used can be changed by modifying the keys:
 
-    protected $blameable = ['created' => 'author_id', 'updated' => 'revised_by_id'];
+    protected $blameable = array(
+        'created' => 'author_id',
+        'updated' => 'revised_by_id'
+    );
 
-Finally, you will need to add these fields to your migrations.
+You will need to add these fields to your migrations for the model (unsigned
+integer fields with foreign keys as appropriate), and add accessors to your
+model:
 
-The `createdBy`, `updatedBy` & `deletedBy` fields `belongsTo()` the model
-defined by `$blameableModel`, which is "User" by default. This can be configured
-in the package configuration (app/config/packages/rmasters/culpa/config.php):
+    class Comment extends Eloquent {
+
+        public function createdBy() {
+            return $this->belongsTo('User');
+        }
+
+   }
+
+If you're using PHP 5.4 or above, you can take advantage of the provided traits
+to add these methods automatically (`Culpa\CreatedBy`, `Culpa\UpdatedBy`,
+`Culpa\DeletedBy`).
+
 
 ### Changing the user source
 
@@ -63,12 +92,15 @@ user id, or null if there is no user authenticated.
 
 ### Changing the user class
 
-By default, the fields will relate to `User` - this can be configured as so:
+By default, the fields will relate to `User` - this can be configured as so in
+the package configuration file:
 
-    'users' => [
+    'users' => array(
 
         // Use the Sentry2 user model
         'classname' => 'Cartalyst\Sentry\Users\Eloquent\User'
+
+    )
 
 
 ## License
