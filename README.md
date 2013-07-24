@@ -75,3 +75,7 @@ By default, the fields will relate to `User` - this can be configured as so:
 
 Culpa is released under the [MIT License](LICENSE).
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rmasters/culpa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
