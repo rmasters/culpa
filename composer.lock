@@ -3,11 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "732cbfba05c0cf46abfdd8fe038c37a8",
+    "hash": "75a009a8c7da79e71ded756a97310299",
     "packages": [
         {
             "name": "illuminate/config",
-            "version": "v4.0.5",
+            "version": "4.0.x-dev",
             "target-dir": "Illuminate/Config",
             "source": {
                 "type": "git",
@@ -97,17 +97,17 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v4.0.5",
+            "version": "4.0.x-dev",
             "target-dir": "Illuminate/Events",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "v4.0.5"
+                "reference": "fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1",
+                "reference": "fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2013-05-28 00:50:14"
+            "time": "2013-07-29 16:44:58"
         },
         {
             "name": "illuminate/filesystem",
@@ -190,17 +190,17 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v4.0.5",
+            "version": "4.0.x-dev",
             "target-dir": "Illuminate/Support",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "v4.0.5"
+                "reference": "f510d013a2e4a226859dc746af5ab10729b02d46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/f510d013a2e4a226859dc746af5ab10729b02d46",
+                "reference": "f510d013a2e4a226859dc746af5ab10729b02d46",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +235,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2013-06-11 00:56:49"
+            "time": "2013-07-29 20:21:32"
         },
         {
             "name": "symfony/finder",
@@ -292,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9faeeaf4baa2c9e1c1c4848eea62818eeaa54f02"
+                "reference": "f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9faeeaf4baa2c9e1c1c4848eea62818eeaa54f02",
-                "reference": "9faeeaf4baa2c9e1c1c4848eea62818eeaa54f02",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8",
+                "reference": "f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8",
                 "shasum": ""
             },
             "require": {
@@ -376,21 +376,21 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-07-18 20:50:44"
+            "time": "2013-07-26 16:01:09"
         },
         {
             "name": "illuminate/database",
-            "version": "v4.0.5",
+            "version": "4.0.x-dev",
             "target-dir": "Illuminate/Database",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "v4.0.5"
+                "reference": "2506845737266a8242ea2e4206af7968cc9fb63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/2506845737266a8242ea2e4206af7968cc9fb63e",
+                "reference": "2506845737266a8242ea2e4206af7968cc9fb63e",
                 "shasum": ""
             },
             "require": {
@@ -436,7 +436,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2013-06-13 03:10:30"
+            "time": "2013-07-29 20:15:10"
         },
         {
             "name": "mockery/mockery",
@@ -734,12 +734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "c25dd88e1592e66dee2553c99ef244203d5a1b98"
+                "reference": "7d3db0300098c76358d642c2338c73d5b958d80f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/c25dd88e1592e66dee2553c99ef244203d5a1b98",
-                "reference": "c25dd88e1592e66dee2553c99ef244203d5a1b98",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/7d3db0300098c76358d642c2338c73d5b958d80f",
+                "reference": "7d3db0300098c76358d642c2338c73d5b958d80f",
                 "shasum": ""
             },
             "require": {
@@ -771,7 +771,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2013-01-07 10:56:35"
+            "time": "2013-07-29 17:35:43"
         },
         {
             "name": "phpunit/phpunit",
@@ -779,12 +779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3.7.22"
+                "reference": "3ec5edb16623c41b9ba4429fc322b0c1795906b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3.7.22",
-                "reference": "3.7.22",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3ec5edb16623c41b9ba4429fc322b0c1795906b6",
+                "reference": "3ec5edb16623c41b9ba4429fc322b0c1795906b6",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-07-06 06:29:15"
+            "time": "2013-07-29 14:28:47"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -949,12 +949,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/satooshi/php-coveralls.git",
-                "reference": "a6eaac8145af484f73aaa6a086e459b62e99568e"
+                "reference": "c95c07e971e4b687718f54fc3447a260fb989e16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/satooshi/php-coveralls/zipball/a6eaac8145af484f73aaa6a086e459b62e99568e",
-                "reference": "a6eaac8145af484f73aaa6a086e459b62e99568e",
+                "url": "https://api.github.com/repos/satooshi/php-coveralls/zipball/c95c07e971e4b687718f54fc3447a260fb989e16",
+                "reference": "c95c07e971e4b687718f54fc3447a260fb989e16",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 "github",
                 "test"
             ],
-            "time": "2013-06-21 13:22:27"
+            "time": "2013-07-25 11:22:39"
         },
         {
             "name": "symfony/config",
