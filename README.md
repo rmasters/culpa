@@ -86,7 +86,7 @@ user id, or null if there is no user authenticated.
 
         // or, for Sentry2 integration:
         'active_user' => function() {
-            return Sentry::check() ? Sentry::user()->id : null;
+            return Sentry::check() ? Sentry::getUser()->id : null;
         }
 
 
