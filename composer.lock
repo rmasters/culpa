@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "75a009a8c7da79e71ded756a97310299",
+    "hash": "e80d9c3f1ddf0cd8b814ccbcfaa169d4",
     "packages": [
         {
             "name": "illuminate/config",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
-                "reference": "v4.0.5"
+                "reference": "f4408e0878a077d8356282c9cf90e48908d0ca84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/config/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/config/zipball/f4408e0878a077d8356282c9cf90e48908d0ca84",
+                "reference": "f4408e0878a077d8356282c9cf90e48908d0ca84",
                 "shasum": ""
             },
             "require": {
@@ -46,10 +46,12 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
-            "time": "2013-05-28 00:50:14"
+            "time": "2013-08-10 17:27:28"
         },
         {
             "name": "illuminate/container",
@@ -58,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "v4.0.5"
+                "reference": "v4.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/v4.0.6",
+                "reference": "v4.0.6",
                 "shasum": ""
             },
             "require": {
@@ -90,10 +92,12 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
-            "time": "2013-05-28 00:50:14"
+            "time": "2013-07-31 14:49:48"
         },
         {
             "name": "illuminate/events",
@@ -102,12 +106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1"
+                "reference": "d3b84d3024f3671a33eb9388b3ff58e4b407c6ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1",
-                "reference": "fa1312d94a7919953efbbcc7f4a1d25a44a4f0c1",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/d3b84d3024f3671a33eb9388b3ff58e4b407c6ac",
+                "reference": "d3b84d3024f3671a33eb9388b3ff58e4b407c6ac",
                 "shasum": ""
             },
             "require": {
@@ -137,10 +141,12 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
-            "time": "2013-07-29 16:44:58"
+            "time": "2013-08-01 14:26:36"
         },
         {
             "name": "illuminate/filesystem",
@@ -149,12 +155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "v4.0.5"
+                "reference": "v4.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/v4.0.5",
-                "reference": "v4.0.5",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/v4.0.6",
+                "reference": "v4.0.6",
                 "shasum": ""
             },
             "require": {
@@ -183,7 +189,9 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
             "time": "2013-06-13 03:54:04"
@@ -195,12 +203,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "f510d013a2e4a226859dc746af5ab10729b02d46"
+                "reference": "b0b8155912874beaa93f412ce46439a24482207f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f510d013a2e4a226859dc746af5ab10729b02d46",
-                "reference": "f510d013a2e4a226859dc746af5ab10729b02d46",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/b0b8155912874beaa93f412ce46439a24482207f",
+                "reference": "b0b8155912874beaa93f412ce46439a24482207f",
                 "shasum": ""
             },
             "require": {
@@ -232,10 +240,12 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
-            "time": "2013-07-29 20:21:32"
+            "time": "2013-08-22 13:37:48"
         },
         {
             "name": "symfony/finder",
@@ -244,12 +254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "b251476db261edb54bb1d7c6b8be6ae49ff9a371"
+                "reference": "4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/b251476db261edb54bb1d7c6b8be6ae49ff9a371",
-                "reference": "b251476db261edb54bb1d7c6b8be6ae49ff9a371",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1",
+                "reference": "4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1",
                 "shasum": ""
             },
             "require": {
@@ -282,7 +292,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 12:12:18"
+            "time": "2013-08-13 20:18:00"
         }
     ],
     "packages-dev": [
@@ -292,12 +302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8"
+                "reference": "898c7c7831096d36a0701fe29e8c9952ceabd2c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8",
-                "reference": "f9760bc410ca6ca1bb2b637bf76d2afc5ee2d4d8",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/898c7c7831096d36a0701fe29e8c9952ceabd2c8",
+                "reference": "898c7c7831096d36a0701fe29e8c9952ceabd2c8",
                 "shasum": ""
             },
             "require": {
@@ -376,7 +386,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-07-26 16:01:09"
+            "time": "2013-08-23 17:19:06"
         },
         {
             "name": "illuminate/database",
@@ -385,12 +395,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "2506845737266a8242ea2e4206af7968cc9fb63e"
+                "reference": "b82faca7f5607a235e3c173c7b43153149b45458"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/2506845737266a8242ea2e4206af7968cc9fb63e",
-                "reference": "2506845737266a8242ea2e4206af7968cc9fb63e",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/b82faca7f5607a235e3c173c7b43153149b45458",
+                "reference": "b82faca7f5607a235e3c173c7b43153149b45458",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +437,9 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
             "keywords": [
@@ -436,7 +448,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2013-07-29 20:15:10"
+            "time": "2013-08-20 13:14:30"
         },
         {
             "name": "mockery/mockery",
@@ -444,12 +456,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "0.8.0"
+                "reference": "35f0e18022f5538df9df8920a3d96c1761d63220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/0.8.0",
-                "reference": "0.8.0",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/35f0e18022f5538df9df8920a3d96c1761d63220",
+                "reference": "35f0e18022f5538df9df8920a3d96c1761d63220",
                 "shasum": ""
             },
             "require": {
@@ -493,16 +505,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "git://github.com/briannesbitt/Carbon.git",
-                "reference": "1.2.0"
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "24c4262e994f7f2a258db5ccb5b2f34073f162ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/briannesbitt/Carbon/zipball/1.2.0",
-                "reference": "1.2.0",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/24c4262e994f7f2a258db5ccb5b2f34073f162ca",
+                "reference": "24c4262e994f7f2a258db5ccb5b2f34073f162ca",
                 "shasum": ""
             },
             "require": {
@@ -511,7 +523,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Carbon": "."
+                    "Carbon": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -532,7 +544,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2012-10-14 17:41:18"
+            "time": "2013-08-21 04:36:40"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -540,12 +552,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d274ffb5a9899ab71c769924071fb8aa09852fb6"
+                "reference": "906a767726f5bd451fbbe1d300ed46600d6c0934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d274ffb5a9899ab71c769924071fb8aa09852fb6",
-                "reference": "d274ffb5a9899ab71c769924071fb8aa09852fb6",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/906a767726f5bd451fbbe1d300ed46600d6c0934",
+                "reference": "906a767726f5bd451fbbe1d300ed46600d6c0934",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +605,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-07-13 13:31:16"
+            "time": "2013-08-13 01:20:13"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -686,16 +698,16 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "ecf7920b27003a9412b07dad79dbb5ad1249e6c3"
+                "reference": "1.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/ecf7920b27003a9412b07dad79dbb5ad1249e6c3",
-                "reference": "ecf7920b27003a9412b07dad79dbb5ad1249e6c3",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/1.0.5",
+                "reference": "1.0.5",
                 "shasum": ""
             },
             "require": {
@@ -726,7 +738,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2013-01-30 06:08:51"
+            "time": "2013-08-02 07:42:54"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -734,12 +746,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "7d3db0300098c76358d642c2338c73d5b958d80f"
+                "reference": "1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/7d3db0300098c76358d642c2338c73d5b958d80f",
-                "reference": "7d3db0300098c76358d642c2338c73d5b958d80f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/1.2.0",
+                "reference": "1.2.0",
                 "shasum": ""
             },
             "require": {
@@ -747,6 +759,11 @@
                 "php": ">=5.3.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -771,7 +788,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2013-07-29 17:35:43"
+            "time": "2013-08-04 05:57:48"
         },
         {
             "name": "phpunit/phpunit",
@@ -779,12 +796,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3ec5edb16623c41b9ba4429fc322b0c1795906b6"
+                "reference": "1237d5d94b4fdc28fd1884bd70b2096050c12391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3ec5edb16623c41b9ba4429fc322b0c1795906b6",
-                "reference": "3ec5edb16623c41b9ba4429fc322b0c1795906b6",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1237d5d94b4fdc28fd1884bd70b2096050c12391",
+                "reference": "1237d5d94b4fdc28fd1884bd70b2096050c12391",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +813,7 @@
                 "phpunit/php-code-coverage": "~1.2.1",
                 "phpunit/php-file-iterator": ">=1.3.1",
                 "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-timer": "~1.0.2",
+                "phpunit/php-timer": ">=1.0.4",
                 "phpunit/phpunit-mock-objects": "~1.2.0",
                 "symfony/yaml": "~2.0"
             },
@@ -845,7 +862,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-07-29 14:28:47"
+            "time": "2013-08-13 02:54:29"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1020,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "1c24c71801c8f7d3b0c788d161a921d365db19bf"
+                "reference": "e7e4a6d70c002f714805f23d29c4ccc018e953a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/1c24c71801c8f7d3b0c788d161a921d365db19bf",
-                "reference": "1c24c71801c8f7d3b0c788d161a921d365db19bf",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/e7e4a6d70c002f714805f23d29c4ccc018e953a4",
+                "reference": "e7e4a6d70c002f714805f23d29c4ccc018e953a4",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1076,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-13 13:40:07"
         },
         {
             "name": "symfony/console",
@@ -1068,12 +1085,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "470446b34c029c7cd1933a55c9bdd887b9f5ec0d"
+                "reference": "8f04af088451aa787e8c2433aa8174f2a0e10b4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/470446b34c029c7cd1933a55c9bdd887b9f5ec0d",
-                "reference": "470446b34c029c7cd1933a55c9bdd887b9f5ec0d",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/8f04af088451aa787e8c2433aa8174f2a0e10b4b",
+                "reference": "8f04af088451aa787e8c2433aa8174f2a0e10b4b",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1129,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-23 15:27:50"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1121,12 +1138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "b8bca82c9347de810aa00898684adbf9b601eb5d"
+                "reference": "d38523224d1efb10056ba375dd25efb1f2d46434"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/b8bca82c9347de810aa00898684adbf9b601eb5d",
-                "reference": "b8bca82c9347de810aa00898684adbf9b601eb5d",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d38523224d1efb10056ba375dd25efb1f2d46434",
+                "reference": "d38523224d1efb10056ba375dd25efb1f2d46434",
                 "shasum": ""
             },
             "require": {
@@ -1166,7 +1183,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-19 20:44:22"
         },
         {
             "name": "symfony/filesystem",
@@ -1175,12 +1192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "59ee050f3dd735d040f6b02a1422c98050e13a20"
+                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/59ee050f3dd735d040f6b02a1422c98050e13a20",
-                "reference": "59ee050f3dd735d040f6b02a1422c98050e13a20",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
+                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1230,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-09 07:26:54"
         },
         {
             "name": "symfony/stopwatch",
@@ -1269,12 +1286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f"
+                "reference": "d717edb3fedd370baa5e2237641680d611d1c6a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f",
-                "reference": "4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/d717edb3fedd370baa5e2237641680d611d1c6a9",
+                "reference": "d717edb3fedd370baa5e2237641680d611d1c6a9",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1324,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-23 15:14:52"
         }
     ],
     "aliases": [
