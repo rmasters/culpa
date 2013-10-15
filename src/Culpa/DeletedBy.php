@@ -26,6 +26,6 @@ trait DeletedBy
     public function deletedBy()
     {
         $model = Config::get('culpa::users.classname', 'User');
-        return $this->belongsTo($model);
+        return $this->belongsTo($model)->withTrashed();
     }
 }
