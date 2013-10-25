@@ -48,7 +48,7 @@ observer to this model:
     }
     Comment::observe(new Culpa\BlameableObserver);
 
-The names of the columns used can be changed by modifying the keys:
+The names of the columns used can be changed by passing an associative array of event names to columns:
 
     protected $blameable = array(
         'created' => 'author_id',
