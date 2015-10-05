@@ -10,9 +10,11 @@
 namespace Culpa;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
-class CulpaServiceProvider extends ServiceProvider {
+class CulpaServiceProvider extends ServiceProvider
+{
+
+    private $configLocation = __DIR__ . '/../../config/culpa.php';
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -29,6 +31,8 @@ class CulpaServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->package('rmasters/culpa');
+
+        $this->publishes([$this->configLocation => config_path('culpa.php')]);
     }
 
     /**
@@ -38,7 +42,7 @@ class CulpaServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['config']->package('rmasters/culpa', __DIR__ . '/../config');
+        $this->mergeConfigFrom($this->configLocation, 'culpa');
     }
 
     /**
