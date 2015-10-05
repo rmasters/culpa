@@ -2,7 +2,7 @@
 
 namespace Culpa\Tests\Models;
 
-use Culpa\Observer\BlameableObserver;
+use Culpa\Observers\BlameableObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Config;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Config;
 /**
  * A model with custom names for fields.
  */
-class CompatibleModel extends Model
+class CompatibleBlameableModel extends Model
 {
     use SoftDeletes;
 

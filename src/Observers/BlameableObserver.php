@@ -7,7 +7,7 @@
  * @copyright Ross Masters 2013
  * @license MIT
  */
-namespace Culpa\Observer;
+namespace Culpa\Observers;
 
 use Illuminate\Support\Facades\Config;
 

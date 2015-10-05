@@ -7,9 +7,9 @@
  * @copyright Ross Masters 2013
  * @license MIT
  */
-namespace Culpa\Model;
+namespace Culpa\Models;
 
-use Culpa\Observer\BlameableObserver;
+use Culpa\Observers\BlameableObserver;
 
 /**
  * Add event-triggered references to the authorised user that triggered them.
