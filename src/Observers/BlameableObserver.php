@@ -16,13 +16,6 @@ class BlameableObserver
     /** @var array $fields Mapping of events to fields */
     private $fields;
 
-    // Default field names for states
-    protected static $defaultFields = array(
-        'created' => 'created_by',
-        'updated' => 'updated_by',
-        'deleted' => 'deleted_by',
-    );
-
     /**
      * Creating event.
      *
@@ -185,10 +178,7 @@ class BlameableObserver
      * Evaluate the blameable fields to use, using reflection to find a protected $blameable property.
      *
      * If keys in $blameable exist for any of [created, updated, deleted], the
-     * values are taken as the column names.
-     *
-     * If values exist for any of [created, updated, deleted], the default
-     * column names are used ($defaultFields in the method below).
+     * values are taken as the column names
      *
      * Examples:
      *   private $blameable = ['created', 'updated'];
@@ -226,7 +216,7 @@ class BlameableObserver
                 $fields['created'] = $blameable['created'];
             } elseif (in_array('created', $blameable)) {
                 //  Use the default field name
-                $fields['created'] = self::$defaultFields['created'];
+                $fields['created'] = Config::get('culpa.default_fields.created', 'created_by');
             }
 
             // Updated
@@ -235,7 +225,7 @@ class BlameableObserver
                 $fields['updated'] = $blameable['updated'];
             } elseif (in_array('updated', $blameable)) {
                 //  Use the default field name
-                $fields['updated'] = self::$defaultFields['updated'];
+                $fields['updated'] = Config::get('culpa.default_fields.updated', 'updated_by');
             }
 
             // Deleted
@@ -244,7 +234,7 @@ class BlameableObserver
                 $fields['deleted'] = $blameable['deleted'];
             } elseif (in_array('deleted', $blameable)) {
                 //  Use the default field name
-                $fields['deleted'] = self::$defaultFields['deleted'];
+                $fields['deleted'] = Config::get('culpa.default_fields.deleted', 'deleted_by');
             }
         }
 
