@@ -1,6 +1,6 @@
 <?php
 
-namespace Culpa\tests\Bootstrap;
+namespace Culpa\Tests\Bootstrap;
 
 use Culpa\Tests\Models\User;
 use Illuminate\Config\Repository;

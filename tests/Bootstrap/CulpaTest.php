@@ -1,6 +1,6 @@
 <?php
 
-namespace Culpa\tests\Bootstrap;
+namespace Culpa\Tests\Bootstrap;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;

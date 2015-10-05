@@ -1,6 +1,6 @@
 <?php
 
-namespace Culpa\tests\Models;
+namespace Culpa\Tests\Models;
 
 use Culpa\Model\Blameable;
 use Culpa\Model\CreatedBy;

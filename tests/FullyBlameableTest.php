@@ -1,6 +1,6 @@
 <?php
 
-namespace Culpa\tests;
+namespace Culpa\Tests;
 
 use Culpa\Tests\Bootstrap\CulpaTest;
 use Culpa\Tests\Models\FullyBlameableModel;
