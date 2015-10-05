@@ -1,4 +1,4 @@
-# Culpa [![Latest Stable Version](https://poser.pugx.org/rmasters/culpa/v/stable.png)](https://packagist.org/packages/rmasters/culpa) [![master](https://travis-ci.org/rmasters/culpa.png?branch=master)](https://travis-ci.org/rmasters/culpa) [![Coverage Status](https://coveralls.io/repos/rmasters/culpa/badge.png)](https://coveralls.io/r/rmasters/culpa) [![Dependency Status](https://www.versioneye.com/user/projects/51e0102690410600020001bb/badge.png)](https://www.versioneye.com/user/projects/51e0102690410600020001bb)
+# Culpa [![Latest Stable Version](https://poser.pugx.org/rmasters/culpa/v/stable.png)](https://packagist.org/packages/rmasters/culpa) [![master](https://travis-ci.org/nstapelbroek/culpa.png?branch=master)](https://travis-ci.org/nstapelbroek/culpa) [![Coverage Status](https://coveralls.io/repos/nstapelbroek/culpa/badge.png)](https://coveralls.io/r/nstapelbroek/culpa)
 
 
 Blameable extension for Laravel's Eloquent ORM models. This extension
@@ -8,13 +8,12 @@ or soft-deleting a model.
 
 ## Installation
 
-This package works with PHP 5.3 and above, but includes traits to make it easier
-to use on PHP 5.4+.
+This package works with Laravel 5.1 (running PHP 5.5.9+).
 
 To install the package in your project:
 
 1.  Add to the require section of your `composer.json`:
-    `"rmasters/culpa": "dev-master"`,
+    `"nstapelbroek/culpa": "dev-master"`,
 2.  Run `composer update`,
 3.  Add to the `providers` list in config/app.php:
     `"Culpa\CulpaServiceProvider"`,
@@ -33,10 +32,10 @@ function the same as Laravel's timestamps.
 
         protected $blameable = array('created', 'updated', 'deleted');
 
-*   On create, the authenticated user will be set in `created_by_id`,
-*   On create and update, the authenticated user will be set in `updated_by_id`,
-*   Additionally, if the model is soft-deletable, the authenticated user will be
-    set in `deleted_by_id`.
+*   On create, the authenticated user will be set in `created_by`,
+*   On create and update, the authenticated user will be set in `updated_by`,
+*   Additionally, if the model was soft-deletable, the authenticated user will be
+    set in `deleted_by`.
 
 To activate the automatic updating of these fields, you need to add the model
 observer to this model:
@@ -51,8 +50,8 @@ observer to this model:
 The names of the columns used can be changed by passing an associative array of event names to columns:
 
     protected $blameable = array(
-        'created' => 'author_id',
-        'updated' => 'revised_by_id'
+        'created' => 'author',
+        'updated' => 'revised_by'
     );
 
 You will need to add these fields to your migrations for the model (unsigned
@@ -62,7 +61,7 @@ model:
     class Comment extends Eloquent {
 
         public function createdBy() {
-            return $this->belongsTo('User');
+            return $this->belongsTo(Config::get('culpa.users.classname', 'App\User'));
         }
 
    }
@@ -74,7 +73,7 @@ to add these methods automatically (`Culpa\CreatedBy`, `Culpa\UpdatedBy`,
 
 ### Changing the user source
 
-The `culpa::users.active_user` config should yield a function that returns a
+The `culpa.users.active_user` config should yield a function that returns a
 user id, or null if there is no user authenticated.
 
     'users' => [
@@ -92,7 +91,7 @@ user id, or null if there is no user authenticated.
 
 ### Changing the user class
 
-By default, the fields will relate to `User` - this can be configured as so in
+By default, the fields will relate to `App\User` - this can be configured as so in
 the package configuration file:
 
     'users' => array(
