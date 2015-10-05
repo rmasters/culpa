@@ -1,4 +1,5 @@
 build/
 vendor/
+.idea
 composer.phar
 .DS_Store
