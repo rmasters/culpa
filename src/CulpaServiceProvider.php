@@ -14,7 +14,17 @@ use Illuminate\Support\ServiceProvider;
 class CulpaServiceProvider extends ServiceProvider
 {
 
-    private $configLocation = __DIR__ . '/../../config/culpa.php';
+    private $configLocation;
+
+    /**
+     * @inheritdoc
+     * @param \Illuminate\Contracts\Foundation\Application $application
+     */
+    public function __construct($application)
+    {
+        $this->configLocation = __DIR__ . '/../config/culpa.php';
+        parent::__construct($application);
+    }
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -30,8 +40,6 @@ class CulpaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('rmasters/culpa');
-
         $this->publishes([$this->configLocation => config_path('culpa.php')]);
     }
 
