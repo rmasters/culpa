@@ -13,12 +13,12 @@ This package works with Laravel 5.1 (running PHP 5.5.9+).
 To install the package in your project:
 
 1.  Add to the require section of your `composer.json`:
-    `"nstapelbroek/culpa": "dev-master"`,
+    `"rmasters/culpa": "dev-develop"`,
 2.  Run `composer update`,
 3.  Add to the `providers` list in config/app.php:
     `"Culpa\CulpaServiceProvider"`,
 4.  Publish the configuration to your application:
-    `artisan config:publish rmasters/culpa`
+    `php artisan vendor:publish`
 
 
 ## Usage
