@@ -4,7 +4,7 @@ namespace Culpa\Tests\Models;
 
 use Culpa\Observers\BlameableObserver;
 use Illuminate\Database\Eloquent\Model;
-use Culpa\Models\Blameable;
+use Culpa\Traits\Blameable;
 
 /**
  * A model with a silly $blameable value

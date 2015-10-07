@@ -2,10 +2,10 @@
 
 namespace Culpa\Tests\Models;
 
-use Culpa\Models\Blameable;
-use Culpa\Models\CreatedBy;
-use Culpa\Models\DeletedBy;
-use Culpa\Models\UpdatedBy;
+use Culpa\Traits\Blameable;
+use Culpa\Traits\CreatedBy;
+use Culpa\Traits\DeletedBy;
+use Culpa\Traits\UpdatedBy;
 use Culpa\Observers\BlameableObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
