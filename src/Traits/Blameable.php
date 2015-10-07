@@ -44,4 +44,13 @@ trait Blameable
 
         return $this->fields;
     }
+
+    /**
+     * After the model is booted, Laravel will boot this Trait, allowing our observer to be bound
+     * to the model.
+     */
+    public static function bootBlameable()
+    {
+        parent::observe(new BlameableObserver());
+    }
 }
