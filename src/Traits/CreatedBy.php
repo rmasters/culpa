@@ -1,31 +1,32 @@
 <?php
+
 /**
- * Blameable auditing support for Laravel's Eloquent ORM
+ * Blameable auditing support for Laravel's Eloquent ORM.
  *
  * @author Ross Masters <ross@rossmasters.com>
  * @copyright Ross Masters 2013
  * @license MIT
  */
-
-namespace Culpa;
+namespace Culpa\Traits;
 
 use Illuminate\Support\Facades\Config;
 
 /**
- * Add event-triggered references to the authorised user that triggered them
+ * Add event-triggered references to the authorised user that triggered them.
  *
  * @property \Illuminate\Database\Eloquent\Model $created_by The creator of this model
- * @property int $created_by_id User id of the model creator
  */
 trait CreatedBy
 {
     /**
-     * Get the user that created the model
+     * Get the user that created the model.
+     *
      * @return \Illuminate\Database\Eloquent\Model User instance
      */
     public function createdBy()
     {
-        $model = Config::get('culpa::users.classname', 'User');
+        $model = Config::get('culpa.users.classname', 'App\User');
+
         return $this->belongsTo($model)->withTrashed();
     }
 }
