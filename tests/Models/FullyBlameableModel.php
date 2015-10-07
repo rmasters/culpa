@@ -19,5 +19,3 @@ class FullyBlameableModel extends Model
     protected $table = 'posts';
     protected $blameable = array('created', 'updated', 'deleted');
 }
-
-FullyBlameableModel::observe(new BlameableObserver());

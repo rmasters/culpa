@@ -18,5 +18,3 @@ class BrokenBlameableModel extends Model
 
     protected $blameable = 42;
 }
-
-BrokenBlameableModel::observe(new BlameableObserver());

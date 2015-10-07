@@ -224,7 +224,7 @@ class BlameableObserver
     protected static function extractBlamableFields(array $blameableValue)
     {
         $fields = array();
-        $checkedFields = array('created' . 'updated', 'deleted');
+        $checkedFields = array('created', 'updated', 'deleted');
 
         foreach ($checkedFields as $possibleField) {
             if (array_key_exists($possibleField, $blameableValue)) {

@@ -3,6 +3,7 @@
 namespace Culpa\Tests\Models;
 
 use Culpa\Observers\BlameableObserver;
+use Culpa\Traits\Blameable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Config;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Config;
  */
 class CompatibleBlameableModel extends Model
 {
-    use SoftDeletes;
+    use Blameable, SoftDeletes;
 
     protected $table = 'posts';
 
@@ -33,4 +34,3 @@ class CompatibleBlameableModel extends Model
         return $this->belongsTo(Config::get('culpa.users.classname', 'App\User'));
     }
 }
-CompatibleBlameableModel::observe(new BlameableObserver());

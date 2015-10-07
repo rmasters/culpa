@@ -15,5 +15,3 @@ class NotBlameableModel extends Model
 
     protected $table = 'posts';
 }
-
-NotBlameableModel::observe(new BlameableObserver());
