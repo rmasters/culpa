@@ -7,7 +7,7 @@
  * @copyright Ross Masters 2013
  * @license MIT
  */
-namespace Culpa\Models;
+namespace Culpa\Traits;
 
 use Illuminate\Support\Facades\Config;
 
