@@ -60,7 +60,10 @@ class BlameableObserver
             }
 
             // Set created-by if the model does not exist
-            if ($this->isBlameable($model, 'created') && !$model->exists && !$model->isDirty($this->getColumn($model, 'created'))) {
+            if (
+                $this->isBlameable($model, 'created') && !$model->exists
+                && !$model->isDirty($this->getColumn($model, 'created'))
+            ) {
                 $this->setCreatedBy($model, $user);
             }
         }
@@ -86,6 +89,7 @@ class BlameableObserver
      * Get the active user.
      *
      * @return int User ID
+     * @throws \Exception
      */
     protected function activeUser()
     {
@@ -101,7 +105,7 @@ class BlameableObserver
      * Set the created-by field of the model.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param int                                 $user
+     * @param int $user
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -116,7 +120,7 @@ class BlameableObserver
      * Set the updated-by field of the model.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param int                                 $user
+     * @param int $user
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -131,7 +135,7 @@ class BlameableObserver
      * Set the deleted-by field of the model.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param int                                 $user
+     * @param int $user
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -194,47 +198,44 @@ class BlameableObserver
         if (is_null($blameable)) {
             // Get the reflected model instance in order to access $blameable
             $reflectedModel = new \ReflectionClass($model);
-
-            // Check if options were passed for blameable
-            if ($reflectedModel->hasProperty('blameable')) {
-                // Get the protected $blamable property
-                $blameableProp = $reflectedModel->getProperty('blameable');
-                $blameableProp->setAccessible(true);
-
-                $blameable = $blameableProp->getValue($model);
-            } else {
-                // Model doesn't have a property for $blameable
+            if (!$reflectedModel->hasProperty('blameable')) {
                 return array();
             }
+
+            $blameableProp = $reflectedModel->getProperty('blameable');
+            $blameableProp->setAccessible(true);
+            $blameable = $blameableProp->getValue($model);
         }
 
-        $fields = array();
         if (is_array($blameable)) {
-            // Created
-            if (array_key_exists('created', $blameable)) {
-                // Custom field name given
-                $fields['created'] = $blameable['created'];
-            } elseif (in_array('created', $blameable)) {
-                //  Use the default field name
-                $fields['created'] = Config::get('culpa.default_fields.created', 'created_by');
+            return self::extractBlamableFields($blameable);
+        }
+
+        return array();
+    }
+
+    /**
+     * Internal method that matches the extracted blamable property values with eloquent fields
+     *
+     * @param array $blameableValue
+     *
+     * @return array
+     */
+    protected static function extractBlamableFields(array $blameableValue)
+    {
+        $fields = array();
+        $checkedFields = array('created' . 'updated', 'deleted');
+
+        foreach ($checkedFields as $possibleField) {
+            if (array_key_exists($possibleField, $blameableValue)) {
+                $fields[$possibleField] = $blameableValue[$possibleField];
+                continue;
             }
 
-            // Updated
-            if (array_key_exists('updated', $blameable)) {
-                // Custom field name given
-                $fields['updated'] = $blameable['updated'];
-            } elseif (in_array('updated', $blameable)) {
-                //  Use the default field name
-                $fields['updated'] = Config::get('culpa.default_fields.updated', 'updated_by');
-            }
-
-            // Deleted
-            if (array_key_exists('deleted', $blameable)) {
-                // Custom field name given
-                $fields['deleted'] = $blameable['deleted'];
-            } elseif (in_array('deleted', $blameable)) {
-                //  Use the default field name
-                $fields['deleted'] = Config::get('culpa.default_fields.deleted', 'deleted_by');
+            if (in_array($possibleField, $blameableValue)) {
+                $defaultValue = $possibleField . '_by';
+                $configKey = 'culpa.default_fields.' . $possibleField;
+                $fields[$possibleField] = Config::get($configKey, $defaultValue);
             }
         }
 
