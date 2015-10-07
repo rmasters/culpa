@@ -27,8 +27,7 @@
         "ext-mysqli": "*",
         "illuminate/database": "5.1.*",
         "phpunit/phpunit": "~4.0",
-        "mockery/mockery": "0.9.*",
-        "satooshi/php-coveralls": "dev-master"
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-4": {
