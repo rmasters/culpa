@@ -28,48 +28,38 @@ and a model observer. The property `$blameable` contains events you wish to
 record - at present this is restricted to created, updated and deleted - which
 function the same as Laravel's timestamps.
 
-    class Comment extends Eloquent {
+```php
 
+    use Culpa\Traits\Blameable;
+    use Culpa\Traits\CreatedBy;
+    use Culpa\Traits\DeletedBy;
+    use Culpa\Traits\UpdatedBy;
+    use Illuminate\Database\Eloquent\Model
+    
+    class Comment extends Eloquent
+    {
+        use Blameable, CreatedBy, UpdatedBy;
+    
         protected $blameable = array('created', 'updated', 'deleted');
+        
+        // Rest of your model here
+    }
+```
 
 *   On create, the authenticated user will be set in `created_by`,
 *   On create and update, the authenticated user will be set in `updated_by`,
 *   Additionally, if the model was soft-deletable, the authenticated user will be
     set in `deleted_by`.
 
-To activate the automatic updating of these fields, you need to add the model
-observer to this model:
-
-    class Comment extends Eloquent {
-
-        // ...
-
-    }
-    Comment::observe(new Culpa\BlameableObserver);
-
+To activate the automatic updating of these fields, you need to add the blamable trait to the model.
 The names of the columns used can be changed by passing an associative array of event names to columns:
 
+```php
     protected $blameable = array(
         'created' => 'author',
         'updated' => 'revised_by'
     );
-
-You will need to add these fields to your migrations for the model (unsigned
-integer fields with foreign keys as appropriate), and add accessors to your
-model:
-
-    class Comment extends Eloquent {
-
-        public function createdBy() {
-            return $this->belongsTo(Config::get('culpa.users.classname', 'App\User'));
-        }
-
-   }
-
-If you're using PHP 5.4 or above, you can take advantage of the provided traits
-to add these methods automatically (`Culpa\CreatedBy`, `Culpa\UpdatedBy`,
-`Culpa\DeletedBy`).
-
+```
 
 ### Changing the user source
 
