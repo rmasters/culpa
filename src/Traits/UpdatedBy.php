@@ -9,6 +9,7 @@
  */
 namespace Culpa\Traits;
 
+use BadMethodCallException;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -22,11 +23,16 @@ trait UpdatedBy
      * Get the user that updated the model.
      *
      * @return \Illuminate\Database\Eloquent\Model User instance
+     * @throws BadMethodCallException
      */
-    public function updatedBy()
+    public function updater()
     {
-        $model = Config::get('culpa.users.classname', 'App\User');
+        if (!method_exists($this, 'getFields')) {
+            throw new BadMethodCallException('You are missing the Blameable Trait');
+        }
 
-        return $this->belongsTo($model)->withTrashed();
+        $fields = $this->getFields();
+        $model = Config::get('culpa.users.classname', 'App\User');
+        return $this->belongsTo($model, $fields['updated']);
     }
 }

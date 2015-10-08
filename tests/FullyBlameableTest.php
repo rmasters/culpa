@@ -4,6 +4,7 @@ namespace Culpa\Tests;
 
 use Culpa\Tests\Bootstrap\CulpaTest;
 use Culpa\Tests\Models\FullyBlameableModel;
+use Illuminate\Support\Facades\Auth;
 
 class FullyBlameableTest extends CulpaTest
 {
@@ -38,6 +39,9 @@ class FullyBlameableTest extends CulpaTest
         $this->assertEquals(1, $this->model->created_by);
         $this->assertEquals(1, $this->model->updated_by);
         $this->assertNull(null, $this->model->deleted_by);
+
+        $this->assertEquals(Auth::user()->name, $this->model->creator->name);
+        $this->assertEquals(Auth::user()->name, $this->model->updater->name);
     }
 
     public function testUpdate()
@@ -60,6 +64,9 @@ class FullyBlameableTest extends CulpaTest
         $this->assertEquals(1, $this->model->created_by);
         $this->assertEquals(1, $this->model->updated_by);
         $this->assertEquals(null, $this->model->deleted_by);
+
+        $this->assertEquals(Auth::user()->name, $this->model->creator->name);
+        $this->assertEquals(Auth::user()->name, $this->model->updater->name);
     }
 
     public function testDelete()
@@ -81,5 +88,9 @@ class FullyBlameableTest extends CulpaTest
         $this->assertEquals(1, $this->model->created_by);
         $this->assertEquals(1, $this->model->updated_by);
         $this->assertEquals(1, $this->model->deleted_by);
+
+        $this->assertEquals(Auth::user()->name, $this->model->creator->name);
+        $this->assertEquals(Auth::user()->name, $this->model->updater->name);
+        $this->assertEquals(Auth::user()->name, $this->model->eraser->name);
     }
 }
