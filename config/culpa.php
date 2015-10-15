@@ -7,26 +7,54 @@
  * @copyright Ross Masters 2013
  * @license MIT
  */
-use Illuminate\Support\Facades\Auth;
+return [
+    'users' => [
+        /*
+        |--------------------------------------------------------------------------
+        | Custom User Source
+        |--------------------------------------------------------------------------
+        |
+        | Enabling this closure breaks laravel's feature to cache config files
+        | The default (commented) option should work for you if you are using the default Auth provider.
+        | @see: https://github.com/laravel/framework/issues/9625
+        |
+        | @return int|null User ID, or null if not authenticated
+        |
+        |
 
-return array(
-    'users' => array(
+        */
+//        'active_user' => function () {
+//            return Auth::check() ? Auth::user()->id : null;
+//        },
+
         /*
-         * Retrieve the authenticated user's ID
-         * @return int|null User ID, or null if not authenticated
-         */
-        'active_user' => function () {
-            return Auth::check() ? Auth::user()->id : null;
-        },
-        /*
-         * Class name of the user object to relate to
-         * @var string
-         */
+        |--------------------------------------------------------------------------
+        | User Model Namespace
+        |--------------------------------------------------------------------------
+        |
+        | Class name of the user object to relate to
+        | @var string
+        |
+        |
+        */
+
         'classname' => 'App\User',
-    ),
-    'default_fields' => array(
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default blameable table columns
+    |--------------------------------------------------------------------------
+    |
+    | Default columns for your blameable fields
+    |
+    |
+    */
+
+    'default_fields' => [
         'created' => 'created_by',
         'updated' => 'updated_by',
         'deleted' => 'deleted_by',
-    )
-);
+    ]
+];
