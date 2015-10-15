@@ -10,6 +10,7 @@
 namespace Culpa\Observers;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Auth;
 
 class BlameableObserver
 {
@@ -93,6 +94,10 @@ class BlameableObserver
      */
     protected function activeUser()
     {
+        if (!Config::has('culpa.users.active_user')) {
+            return Auth::check() ? Auth::user()->id : null;
+        }
+
         $fn = Config::get('culpa.users.active_user');
         if (!is_callable($fn)) {
             throw new \Exception('culpa.users.active_user should be a closure');
