@@ -38,7 +38,7 @@ class Comment extends Model
     use Blameable, CreatedBy, UpdatedBy;
 
     protected $blameable = array('created', 'updated', 'deleted');
-    
+
     // Rest of your model here
 }
 ```
@@ -89,7 +89,21 @@ the package configuration file:
 )
 ```
 
+### Temporarily disabling Culpa for specific events
+
+In some cases it might not be desirable to use Culpa.
+
+You can disable it in your model by setting the blamable variable to false:
+```php
+public function enableUser()
+{
+    $this->attributes['enabled'] = true;
+    $this->blameable = false;
+
+    return $this->save();
+}
+```
+
 ## License
 
 Culpa is released under the [MIT License](LICENSE).
-
