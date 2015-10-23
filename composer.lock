@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "19bf73bcc06eb9183d15bdc6e467d32d",
-    "content-hash": "401edbb7b10fc05ee81560ca03948f89",
+    "hash": "7cbd4847f3f9d108f5e06ed42e342309",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -181,12 +180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "e70593245aa175f81679c18e4f3673eba353ac07"
+                "reference": "f14ea33d9ffcab4ca3aaed0328a92301adbe6960"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/e70593245aa175f81679c18e4f3673eba353ac07",
-                "reference": "e70593245aa175f81679c18e4f3673eba353ac07",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/f14ea33d9ffcab4ca3aaed0328a92301adbe6960",
+                "reference": "f14ea33d9ffcab4ca3aaed0328a92301adbe6960",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +215,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "http://laravel.com",
-            "time": "2015-09-24 11:16:48"
+            "time": "2015-10-19 06:01:02"
         },
         {
             "name": "illuminate/contracts",
@@ -311,12 +310,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "2cd81653614e3feb443914dd9f49b980cef36b85"
+                "reference": "21e6f8286825ce5e1a0afb04de5defcbfcaee61b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/2cd81653614e3feb443914dd9f49b980cef36b85",
-                "reference": "2cd81653614e3feb443914dd9f49b980cef36b85",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/21e6f8286825ce5e1a0afb04de5defcbfcaee61b",
+                "reference": "21e6f8286825ce5e1a0afb04de5defcbfcaee61b",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +352,7 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "http://laravel.com",
-            "time": "2015-08-24 08:44:48"
+            "time": "2015-10-19 06:01:02"
         },
         {
             "name": "illuminate/support",
@@ -361,12 +360,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "e90a1c0cda9260e5ddaecbda0e66ec4502b09b42"
+                "reference": "c8e9aad1e06cb159e5f082b16037366b7a0409c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/e90a1c0cda9260e5ddaecbda0e66ec4502b09b42",
-                "reference": "e90a1c0cda9260e5ddaecbda0e66ec4502b09b42",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/c8e9aad1e06cb159e5f082b16037366b7a0409c6",
+                "reference": "c8e9aad1e06cb159e5f082b16037366b7a0409c6",
                 "shasum": ""
             },
             "require": {
@@ -378,6 +377,7 @@
             },
             "suggest": {
                 "jeremeamia/superclosure": "Required to be able to serialize closures (~2.0).",
+                "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (^1.0.6).",
                 "symfony/var-dumper": "Required to use the dd function (2.7.*)."
             },
             "type": "library",
@@ -406,7 +406,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2015-10-06 23:52:41"
+            "time": "2015-10-19 06:01:02"
         },
         {
             "name": "symfony/finder",
@@ -414,19 +414,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "8d39ca609282fe44c63038754461d15dbabc7469"
+                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/8d39ca609282fe44c63038754461d15dbabc7469",
-                "reference": "8d39ca609282fe44c63038754461d15dbabc7469",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
+                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -455,7 +452,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-06 08:31:51"
+            "time": "2015-10-11 09:39:48"
         }
     ],
     "packages-dev": [
@@ -564,12 +561,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "0b046bbb092e26a677e4cb9704a849243e65a7e4"
+                "reference": "5ffe6bc5a5a11a492f094ab1393cd4bd6954bf92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/0b046bbb092e26a677e4cb9704a849243e65a7e4",
-                "reference": "0b046bbb092e26a677e4cb9704a849243e65a7e4",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/5ffe6bc5a5a11a492f094ab1393cd4bd6954bf92",
+                "reference": "5ffe6bc5a5a11a492f094ab1393cd4bd6954bf92",
                 "shasum": ""
             },
             "require": {
@@ -615,7 +612,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2015-10-05 21:58:27"
+            "time": "2015-10-22 18:09:07"
         },
         {
             "name": "mockery/mockery",
@@ -1084,12 +1081,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5"
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdd199472410fd7e32751f9c814c7e06f2c21bd5",
-                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/625f8c345606ed0f3a141dfb88f4116f0e22978e",
+                "reference": "625f8c345606ed0f3a141dfb88f4116f0e22978e",
                 "shasum": ""
             },
             "require": {
@@ -1148,7 +1145,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-07 10:39:46"
+            "time": "2015-10-23 06:48:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1441,16 +1438,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "dev-master",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97"
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23af31f402993cfd94e99cbc4b782e9a78eb0e97",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/bc37d50fea7d017d3d340f230811c9f1d7280af4",
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4",
                 "shasum": ""
             },
             "require": {
@@ -1488,7 +1485,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-06-21 15:11:22"
+            "time": "2015-10-12 03:26:01"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1584,12 +1581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "724ed32e326ed46160c97acf9fb5cb2b6322a234"
+                "reference": "e7c5fcb19d991da3894858bb4d4775be57094eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/724ed32e326ed46160c97acf9fb5cb2b6322a234",
-                "reference": "724ed32e326ed46160c97acf9fb5cb2b6322a234",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/e7c5fcb19d991da3894858bb4d4775be57094eda",
+                "reference": "e7c5fcb19d991da3894858bb4d4775be57094eda",
                 "shasum": ""
             },
             "require": {
@@ -1602,7 +1599,6 @@
                 "psr/log": "~1.0",
                 "symfony/config": "~2.8|~3.0",
                 "symfony/intl": "~2.8|~3.0",
-                "symfony/phpunit-bridge": "~2.8|~3.0",
                 "symfony/yaml": "~2.8|~3.0"
             },
             "suggest": {
@@ -1637,7 +1633,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-07 10:38:49"
+            "time": "2015-10-11 09:14:55"
         },
         {
             "name": "symfony/yaml",
@@ -1645,19 +1641,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "6f9ac2eb9dca0d6a67ca06e6424b700a4353c2f9"
+                "reference": "8d32eb597b531eb915b4fee3dc582ade5ae1fe6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/6f9ac2eb9dca0d6a67ca06e6424b700a4353c2f9",
-                "reference": "6f9ac2eb9dca0d6a67ca06e6424b700a4353c2f9",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
+                "reference": "8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.8|~3.0"
             },
             "type": "library",
             "extra": {
@@ -1686,7 +1679,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-02 17:05:43"
+            "time": "2015-10-13 16:01:35"
         }
     ],
     "aliases": [],
@@ -1696,6 +1689,6 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": {
-        "ext-mysqli": "*"
+        "ext-sqlite3": "*"
     }
 }

@@ -24,7 +24,7 @@
         "illuminate/events": "5.1.*"
     },
     "require-dev": {
-        "ext-mysqli": "*",
+        "ext-sqlite3": "*",
         "illuminate/database": "5.1.*",
         "phpunit/phpunit": "~4.0",
         "mockery/mockery": "0.9.*"
