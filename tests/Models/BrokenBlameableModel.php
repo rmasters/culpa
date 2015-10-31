@@ -1,12 +1,14 @@
 <?php
 
-namespace Culpa;
+namespace Culpa\Tests\Models;
 
+use Culpa\Observers\BlameableObserver;
 use Illuminate\Database\Eloquent\Model;
+use Culpa\Traits\Blameable;
 
 /**
  * A model with a silly $blameable value
- * PHP 5.4+
+ * PHP 5.4+.
  */
 class BrokenBlameableModel extends Model
 {
@@ -16,4 +18,3 @@ class BrokenBlameableModel extends Model
 
     protected $blameable = 42;
 }
-BrokenBlameableModel::observe(new BlameableObserver);
