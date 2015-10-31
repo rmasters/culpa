@@ -104,6 +104,47 @@ public function enableUser()
 }
 ```
 
+### Extending the schema builder
+
+Want Culpa to help you configure your database? Just replace the facade alias in your application configuration (config/app.php). An example below:
+
+```php
+    // 'Schema'    => Illuminate\Support\Facades\Schema::class,
+    'Schema'    => Culpa\Facades\Schema::class,
+```
+
+This will extend the schema blueprint with the culpa table blueprint. For type hinting, make sure you'll use
+`Culpa\Database\Schema\Blueprint` instead of `Illuminate\Database\Schema\Blueprint`. 
+An example database migration is shown below
+
+```php
+<?php
+
+use Culpa\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePostsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->createdBy();
+            $table->updatedBy();
+            $table->deletedBy();
+
+            // OR
+            $table->blameable();
+        });
+    }
+
+    public function down()
+    {
+        Schema::drop('posts');
+    }
+}
+```
+The blueprint helper uses your configuration to resolve the column names. Please realise that changing these configuration values in a later stage might break your old migrations and models.
+
 ## License
 
 Culpa is released under the [MIT License](LICENSE).
