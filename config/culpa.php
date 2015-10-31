@@ -40,8 +40,20 @@ return [
 
         'classname' => 'App\User',
 
-    ],
+        /*
+        |--------------------------------------------------------------------------
+        | Users table
+        |--------------------------------------------------------------------------
+        |
+        | By providing a tableName Culpa's schema blueprint can create foreign key
+        | constraints to this table, referencing the id.
+        | @var string
+        |
+        |
+        */
+        'table' => 'users'
 
+    ],
     /*
     |--------------------------------------------------------------------------
     | Default blameable table columns
